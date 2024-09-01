@@ -1,54 +1,77 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon/components";
+import { record } from "astro:schema";
 
 const features = [
   {
-    title: "Bring Your Own Framework",
+    title: "Insurance Claim Assistance",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+      "Navigating the insurance claim process for roofing damage can be challenging. We offer expert assistance to help you through the process and ensure your roofing needs are addressed promptly. Best of all, our insurance claim assistance is entirely free of charge.",
     icon: "bx:bxs-briefcase",
+    route: "/insurance",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "Asphalt Shingle Roofing System",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
+      "Durable and cost-effective, our asphalt shingle solutions offer reliable protection and a range of aesthetic options.",
     icon: "bx:bxs-window-alt",
+    route: "/asphalt",
   },
   {
-    title: "On-Demand Components",
+    title: "Metal Roofing Systems",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
+      "For unmatched durability and energy efficiency, explore our premium metal roofing choices, designed to withstand New Hampshire’s toughest weather.",
     icon: "bx:bxs-data",
+    route: "/metal",
   },
   {
-    title: "Broad Integration",
+    title: "Cedar Shake Roofing Systems",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
+      "Enhance the charm and character of your home with our classic cedar shake roofs, offering both beauty and resilience.",
     icon: "bx:bxs-bot",
+    route: "/cedar",
   },
   {
-    title: "SEO Enabled",
+    title: "Slate Roofing Systems",
     description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
+      "Add timeless elegance to your home with our high-quality slate roofing, known for its exceptional longevity and sophisticated appearance.",
     icon: "bx:bxs-file-find",
+    route: "/slate",
   },
   {
-    title: "Community",
+    title: "Siding",
     description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+      "Protect and beautify your home with our selection of high-quality siding materials, tailored to suit your style and needs.",
     icon: "bx:bxs-user",
+    route: "/siding",
+  },
+  {
+    title: "Gutters Systems and Maintenance",
+    description:
+      "Prevent water damage and safeguard your home’s foundation with our expert gutter installation and maintenance services.",
+    icon: "bx:bxs-user",
+    route: "/gutters",
   },
 ];
 ---
 
 <div class="mt-16 md:mt-0">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Everything you need to start a website
+    Why Choose Northeast Roofing Solutions?
   </h2>
+  <wbr>
+  <!-- Redo this section, temp solution -->
   <p class="text-lg mt-4 text-slate-600">
-    Astro comes batteries included. It takes the best parts of state-of-the-art
-    tools and adds its own innovations.
+    <ul>
+        <li><span class="text-blue-400 uppercase tracking-wider text-sm font-medium">Local Expertise:</span> As proud members of the New Hampshire community, we understand the specific needs of local homes and are equipped to handle the challenges of our regional weather conditions.</li>
+        <wbr>
+        <li><span class="text-blue-400 uppercase tracking-wider text-sm font-medium">Exceptional Craftsmanship:</span> Our team is committed to delivering superior quality and precision in every project, using the best materials and techniques to ensure lasting results.</li>
+        <wbr>
+        <li><span class="text-blue-400 uppercase tracking-wider text-sm font-medium">Hail and Wind Damage Specialists:</span> We are specialized in assessing and repairing damage caused by hail and strong winds. Our knowledgeable storm specialists guide you through the complexities of insurance claims, taking the load off your shoulders and ensuring that the process is handled efficiently and effectively.</li>
+        <wbr>
+        <li><span class="text-blue-400 uppercase tracking-wider text-sm font-medium">Complimentary Consultations:</span> We believe in providing value from the very start. After contacting us, one of our expert storm care specialists will reach out to you within the day for a free consultation.</li>
+    </ul>
   </p>
 </div>
 
@@ -60,7 +83,7 @@ const features = [
           <Icon class="text-white" name={item.icon} />
         </div>
         <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <h3 class="font-semibold text-lg"><a href={item.route} target="_blank" rel="noopener" class="hover:underline">{item.title}</a></h3>{" "}
           <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
         </div>
       </div>
