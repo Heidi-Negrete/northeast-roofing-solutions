@@ -1,15 +1,130 @@
 ---
 import Container from "@components/container.astro";
 import Layout from "@layouts/Layout.astro";
+import { Picture } from "astro:assets";
+import cedarImage from "assets/cedar.jpg";
+import cedarImage2 from "assets/cedar2.jpg";
+import Cta from "@components/cta.astro";
+
+const reasons = [
+    {
+        reason: "Timeless Aesthetic",
+        description: "Cedar shake roofs provide a classic, rustic appearance that enhances the charm and character of any home. The natural variations in color and texture create a unique look that stands out and complements various architectural styles.",
+    },
+    {
+        reason: "Natural Insulation",
+        description: "Cedar shakes offer excellent natural insulation, helping to keep your home cooler in the summer and warmer in the winter. This can contribute to improved energy efficiency and lower heating and cooling costs.",
+    },
+    {
+        reason: "Durability",
+        description: "Cedar shakes are known for their resilience. When properly maintained, they can withstand severe weather conditions, including heavy rain, snow, and high winds. Cedar is also naturally resistant to decay, insects, and rot.",
+    },
+    {
+        reason: "Longevity",
+        description: "A well-maintained cedar shake roof can last between 30 to 50 years. The longevity of cedar shakes, combined with their durability, makes them a long-term investment in your home’s exterior.",
+    },
+    {
+        reason: "Eco-Friendly",
+        description: "Cedar shakes are made from a renewable resource and are biodegradable. Choosing cedar roofing can be an environmentally responsible choice, especially when sourced from sustainable forests.",
+    },
+    {
+        reason: "Low Maintenance",
+        description: "While cedar shakes do require regular maintenance, they are relatively easy to care for. Periodic cleaning and treatment can help preserve their appearance and extend their lifespan.",
+    },
+]
+
+const cons = [
+    {
+        reason: "Higher Initial Cost",
+        description: "Cedar shakes generally have a higher upfront cost compared to asphalt shingles and some other roofing materials. However, their long lifespan can offset this initial expense.",
+    },
+    {
+        reason: "Maintenance Requirements",
+        description: "Cedar shake roofs require more maintenance than other roofing materials. Regular inspections, cleaning, and treatment with preservatives are needed to prevent issues like mold, mildew, and rot.",
+    },
+        {
+        reason: "Cost of Repairs",
+        description: "Repairing cedar shakes can be more expensive and complex than repairing asphalt shingles. Replacing damaged shakes often requires skilled labor to ensure proper installation and alignment.",
+    },
+    {
+        reason: "Susceptibility to Fire",
+        description: "Cedar shakes are more flammable than some other roofing materials. While treatments are available to enhance fire resistance, it’s important to consider the fire risk in your area.",
+    },
+]
 ---
 
-<Layout title="404 Not Found">
+<Layout title="Cedar Roof System">
   <Container>
     <div class="min-h-[calc(100vh-16rem)] flex items-center justify-center">
-      <div class="mt-16 text-center">
-        <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">cedar</h1>
-        <p class="text-lg mt-4 text-slate-600">info about cedar</p>
-      </div>
+        <div class="mt-16 text-center">
+            <!-- left and right division for heading and image -->
+            <div class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-8">
+                <div class="py-6 md:order-1 hidden md:block">
+                    <Picture
+                    src={cedarImage}
+                    alt="Home with cedar shake roof"
+                    widths={[200, 400, 600]}
+                    sizes="(max-width: 800px) 100vw, 620px"
+                    loading="eager"
+                    format="avif"
+                    />
+                </div>
+
+                <div>
+            <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">Cedar Shake Roofing System</h1>
+            <p class="text-lg mt-4 text-slate-600 max-w-xl">Cedar shake roofing systems offer a unique blend of natural beauty and durability. Here’s why a cedar shake roof could be the perfect choice for your home:</p>
+                </div>
+
+                
+            </div>
+
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+            {
+                reasons.map((item) => (
+                    <div class="flex gap-4 items-start">
+                    <div>
+                        <h3 class="font-semibold text-lg">{item.reason}</h3>{" "}
+                        <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+                    </div>
+                    </div>
+                ))
+            }
+            </div>
+
+            <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-16">
+                Cedar Roofing Cons</h2>
+            <p class="text-lg mt-4 text-slate-600">While cedar shake roofs offer many advantages, they also have some considerations:</p>
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-8 gap-16">
+            {
+                cons.map((item) => (
+                    <div class="flex gap-4 items-start">
+                    <div>
+                        <h3 class="font-semibold text-lg">{item.reason}</h3>{" "}
+                        <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+                    </div>
+                    </div>
+                ))
+            }
+            </div> 
+        </div>
     </div>
   </Container>
+  <Cta />
+  <Container>
+    <div class="min-h-[calc(100vh-16rem)] flex items-center justify-center">
+        <Picture
+                    src={cedarImage2}
+                    alt="cedar shake shingles"
+                    widths={[200, 400, 600]}
+                    sizes="(max-width: 800px) 100vw, 620px"
+                    loading="eager"
+                    format="avif"
+                    class = "mt-16"
+                    />
+    </div>
+    </Container>
+
+  
 </Layout>

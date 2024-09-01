@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: [
+          "Montserrat",
           "Bricolage Grotesque Variable",
           "Inter Variable",
           "Inter",

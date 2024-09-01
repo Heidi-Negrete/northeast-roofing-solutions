@@ -1,15 +1,83 @@
 ---
 import Container from "@components/container.astro";
 import Layout from "@layouts/Layout.astro";
+import { Picture } from "astro:assets";
+import guttersImage from "assets/gutters.jpg";
+import guttersImage2 from "assets/gutters2.jpg";
+import Cta from "@components/cta.astro";
+
+const reasons = [
+    {
+        reason: "Damage and Wear",
+        description: "Over time, gutters can become clogged, rusted, or damaged. Signs of damage include sagging, leaks, and ineffective water flow, which can lead to serious issues if left unaddressed.",
+    },
+    {
+        reason: "Improved Functionality",
+        description: "Modern gutter systems offer better performance and efficiency. Upgrading to seamless gutters or high-quality materials can enhance water diversion and reduce maintenance needs.",
+    },
+    {
+        reason: "Prevent Water Damage",
+        description: "Properly functioning gutters help direct water away from your home’s foundation, reducing the risk of erosion, basement flooding, and foundation issues.",
+    },
+    {
+        reason: "Aesthetic Enhancement",
+        description: "New gutters can improve your home’s curb appeal and complement its overall look. Choosing from a variety of styles and colors allows you to match your gutters to your home’s exterior.",
+    },
+    {
+        reason: "Increased Home Value",
+        description: "Upgrading your gutters can boost your home’s value by enhancing its protection and appearance, making it more attractive to potential buyers.",
+    },
+]
 ---
 
-<Layout title="404 Not Found">
+<Layout title="Gutter Cleaning and Installation Services">
   <Container>
     <div class="min-h-[calc(100vh-16rem)] flex items-center justify-center">
-      <div class="mt-16 text-center">
-        <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Gutters</h1>
-        <p class="text-lg mt-4 text-slate-600">Info about gutters</p>
-      </div>
+        <div class="mt-16 text-center">
+            <!-- left and right division for heading and image -->
+            <div class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-8">
+                <div class="py-6 md:order-1 hidden md:block">
+                    <Picture
+                    src={guttersImage}
+                    alt="Home with cedar shake roof"
+                    widths={[200, 400, 600]}
+                    sizes="(max-width: 800px) 100vw, 620px"
+                    loading="eager"
+                    format="avif"
+                    />
+                </div>
+
+                <div>
+            <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">Gutter Cleaning and Installation Services</h1>
+            <p class="text-lg mt-4 text-slate-600 max-w-xl"> Is your gutter system in need of attention? Whether it’s replacement, repairs, or cleanings, Northeast Roofing Solutions is here to make the process straightforward and stress-free. Our team specializes in comprehensive gutter services, ensuring you understand your options and receive the best results for your home. We handle every aspect of gutter care, from installing new systems to repairing and maintaining your existing ones. Here are key reasons to consider a new gutter system:</p>
+                </div>
+            </div>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+            {
+                reasons.map((item) => (
+                    <div class="flex gap-4 items-start">
+                    <div>
+                        <h3 class="font-semibold text-lg">{item.reason}</h3>{" "}
+                        <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+                    </div>
+                    </div>
+                ))
+            }
+            </div>
+        </div>
     </div>
+  </Container>
+    <Cta/>
+  <Container>
+    <div class="min-h-[calc(100vh-16rem)] flex items-center justify-center mt-16">
+        <Picture
+                    src={guttersImage2}
+                    alt="Home with cedar shake roof"
+                    widths={[200, 400, 600]}
+                    sizes="(max-width: 800px) 100vw, 620px"
+                    loading="eager"
+                    format="avif"
+                    />
+        </div>
   </Container>
 </Layout>

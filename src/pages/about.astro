@@ -15,7 +15,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
   <Container>
     <Sectionhead>
       <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="desc"></Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
@@ -23,12 +23,10 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
         Fixing one roof at a time.
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        We're a hardworking team! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+        At Northeast Roofing Solutions, we bring over 15 years of combined experience to every project. Our team is dedicated to delivering top-quality roofing services with a focus on craftsmanship, reliability, and customer satisfaction. Whether you need a new installation, repairs, or maintenance, our extensive industry knowledge ensures that your roofing needs are met with the highest standards of excellence. Trust us to protect your home with precision and care.
       </p>
     </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+    <!-- <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       {
         publishedTeamMembers.map((teamMemberEntry) => (
           <div class="group">
@@ -52,6 +50,6 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           </div>
         ))
       }
-    </div>
+    </div> -->
   </Container>
 </Layout>

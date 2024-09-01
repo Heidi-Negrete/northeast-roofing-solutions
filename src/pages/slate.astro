@@ -1,15 +1,130 @@
 ---
 import Container from "@components/container.astro";
 import Layout from "@layouts/Layout.astro";
+import { Picture } from "astro:assets";
+import slateImage from "assets/slate.jpg";
+import slateImage2 from "assets/slate2.jpg";
+import Cta from "@components/cta.astro";
+
+const reasons = [
+    {
+        reason: "Timeless Elegance",
+        description: "Slate roofing provides a sophisticated and classic look that adds unmatched character and charm to your home. Its natural stone appearance and variety of colors and textures make it a standout feature on any property.",
+    },
+    {
+        reason: "Exceptional Durability",
+        description: "Slate is one of the most durable roofing materials available. It can withstand severe weather conditions, including heavy rain, snow, and high winds, and is resistant to cracking, fading, and warping. Slate roofs can last over a century with proper maintenance.",
+    },
+    {
+        reason: "Low Maintenance",
+        description: "Slate roofs require minimal maintenance compared to other materials. Their longevity means fewer repairs and replacements over time. Occasional inspections and cleaning are typically all that is needed to keep your slate roof in excellent condition.",
+    },
+    {
+        reason: "Fire Resistance",
+        description: "Slate is naturally non-combustible, offering high levels of fire resistance. This can provide added safety and peace of mind, particularly in areas prone to wildfires or other fire hazards.",
+    },
+    {
+        reason: "Eco-Friendly",
+        description: "Slate is a natural and sustainable material. It is fully recyclable at the end of its life and has a minimal environmental impact compared to synthetic roofing options.",
+    },
+    {
+        reason: "Enhanced Home Value",
+        description: "The aesthetic appeal and long lifespan of slate roofing can significantly increase your home’s market value. Potential buyers appreciate the durability and classic look of slate, making your property more attractive.",
+    },
+]
+
+const cons = [
+    {
+        reason: "Higher Initial Cost",
+        description: "Slate roofing has a higher upfront cost compared to other materials like asphalt shingles. However, the long-term durability can justify this initial investment.",
+    },
+    {
+        reason: "Heavy Weight",
+        description: "Slate is a heavy material, which means that your home’s structure must be able to support the weight of a slate roof. This may require additional reinforcement during installation.",
+    },
+    {
+        reason: "Complex Installation",
+        description: "Installing a slate roof requires specialized skills and expertise. It’s crucial to hire experienced professionals to ensure proper installation and avoid issues with leaks or structural damage.",
+    },
+    {
+        reason: "Potential for Breakage",
+        description: "Although slate is durable, it can be brittle. It is possible for individual slates to break or crack under heavy impact, such as from falling debris. Proper maintenance and prompt repairs are essential.",
+    }
+]
 ---
 
-<Layout title="404 Not Found">
+<Layout title="Slate Roof System">
   <Container>
     <div class="min-h-[calc(100vh-16rem)] flex items-center justify-center">
-      <div class="mt-16 text-center">
-        <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Slate Roofing</h1>
-        <p class="text-lg mt-4 text-slate-600">info about slate stuffs</p>
-      </div>
+        <div class="mt-16 text-center">
+            <!-- left and right division for heading and image -->
+            <div class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-8">
+                <div class="py-6 md:order-1 hidden md:block">
+                    <Picture
+                    src={slateImage2}
+                    alt="Home with slate roof"
+                    widths={[200, 400, 600]}
+                    sizes="(max-width: 800px) 100vw, 620px"
+                    loading="eager"
+                    format="avif"
+                    />
+                </div>
+
+                <div>
+            <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">Slate Roofing System</h1>
+            <p class="text-lg mt-4 text-slate-600 max-w-xl">Slate roof systems are renowned for their timeless beauty and exceptional durability. Here’s why a slate roof could be the ideal choice for your home:</p>
+                </div>
+
+                
+            </div>
+
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+            {
+                reasons.map((item) => (
+                    <div class="flex gap-4 items-start">
+                    <div>
+                        <h3 class="font-semibold text-lg">{item.reason}</h3>{" "}
+                        <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+                    </div>
+                    </div>
+                ))
+            }
+            </div>
+
+            <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-16">
+                Slate Roofing Cons</h2>
+            <p class="text-lg mt-4 text-slate-600">While slate roofs offer numerous benefits, there are some drawbacks to consider:</p>
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-8 gap-16">
+            {
+                cons.map((item) => (
+                    <div class="flex gap-4 items-start">
+                    <div>
+                        <h3 class="font-semibold text-lg">{item.reason}</h3>{" "}
+                        <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+                    </div>
+                    </div>
+                ))
+            }
+            </div> 
+        </div>
     </div>
   </Container>
+  <Cta />
+  <Container>
+    <div class="min-h-[calc(100vh-16rem)] flex items-center justify-center">
+        <Picture
+                    src={slateImage}
+                    alt="slate roofing shingles"
+                    widths={[200, 400, 600]}
+                    sizes="(max-width: 800px) 100vw, 620px"
+                    loading="eager"
+                    format="avif"
+                    class = "mt-16"
+                    />
+    </div>
+    </Container>
+
+  
 </Layout>

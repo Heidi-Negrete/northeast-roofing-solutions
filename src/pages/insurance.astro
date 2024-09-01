@@ -1,15 +1,19 @@
 ---
 import Container from "@components/container.astro";
 import Layout from "@layouts/Layout.astro";
+import Cta from "@components/cta.astro";
 ---
 
 <Layout title="404 Not Found">
   <Container>
-    <div class="min-h-[calc(100vh-16rem)] flex items-center justify-center">
+    <div class="min-h-[calc(100vh-55rem)] flex items-center justify-center">
       <div class="mt-16 text-center">
         <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Insurance Claim Assistance</h1>
-        <p class="text-lg mt-4 text-slate-600">Information about Insurance.</p>
+        <p class="text-lg mt-4 text-slate-600">Dealing with roof damage and insurance claims can be complex and stressful. At Northeast Roofing Solutions, we’re committed to making this process easier for you. Our team is dedicated to helping you understand all of your options and ensuring you get the best possible outcome for your claim.</p>
+        
+        <p class="text-lg mt-4 text-slate-600">To determine if your roof qualifies for an insurance claim, simply fill out the contact form below or reach out to one of our representatives for a complimentary roof inspection. We're here to guide you through every step and ensure a smooth experience.</p>
       </div>
     </div>
   </Container>
+  <Cta/>
 </Layout>

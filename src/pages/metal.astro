@@ -1,15 +1,138 @@
 ---
 import Container from "@components/container.astro";
 import Layout from "@layouts/Layout.astro";
+import { Picture } from "astro:assets";
+import metalImage from "assets/metal.jpg";
+import metalImage2 from "assets/metal2.jpg";
+import Cta from "@components/cta.astro";
+
+const reasons = [
+    {
+        reason: "Exceptional Durability",
+        description: "Metal roofs are built to last. They can withstand severe weather conditions, including heavy rain, strong winds, and even hail. Unlike other materials, metal roofing doesn’t crack, warp, or rot, making it a long-term investment for your home.",
+    },
+    {
+        reason: "Long-Term Savings",
+        description: "While the initial cost of a metal roof might be higher than traditional materials, it can save you money in the long run. Metal roofs have a lifespan of 40-70 years, compared to 15-20 years for asphalt shingles. This means fewer replacements and lower maintenance costs over time.",
+    },
+    {
+        reason: "Energy Efficiency",
+        description: "Metal roofs are highly reflective, which helps to deflect sunlight and reduce heat absorption. This can lead to lower cooling costs in the summer, making your home more energy-efficient and environmentally friendly.",
+    },
+    {
+        reason: "Low Maintenance",
+        description: "One of the biggest advantages of a metal roof is its minimal maintenance requirements. Metal roofs don’t require frequent repairs or cleaning, and they resist moss and algae growth better than other materials.",
+    },
+    {
+        reason: "Aesthetic Variety",
+        description: "Metal roofs come in a wide range of styles, colors, and finishes, allowing you to choose a look that complements your home. Whether you prefer the sleek appearance of standing seam metal panels or the classic look of metal shingles, there’s an option to fit your design preferences.",
+    },
+    {
+        reason: "Eco-Friendly",
+        description: "Metal roofing is often made from recycled materials and is fully recyclable at the end of its life. Choosing a metal roof contributes to sustainability by reducing waste and minimizing environmental impact.",
+    },
+    {
+        reason: "Enhanced Home Value",
+        description: "A metal roof can increase your home’s market value. Potential buyers appreciate the durability, low maintenance, and energy efficiency that metal roofs offer, making your property more attractive in the real estate market.",
+    },
+    {
+        reason: "Fire Resistance",
+        description: "Metal roofs are non-combustible, which means they provide a high level of fire resistance. This can offer added protection for your home, especially in areas prone to wildfires or frequent storms.",
+    },
+]
+
+const cons = [
+    {
+        reason: "Higher Initial Cost",
+        description: "Metal roofs typically cost more upfront compared to asphalt shingles or other traditional materials. However, the long-term savings can offset this initial expense.",
+    },
+    {
+        reason: "Noise",
+        description: "Metal roofs can be noisier during heavy rain or hail compared to other roofing materials. This can be mitigated with proper insulation and underlayment, but it’s something to consider.",
+    },
+    {
+        reason: "Denting",
+        description: "Although metal roofs are durable, they can be susceptible to denting from hail or falling debris. Choosing a thicker gauge metal can help reduce this risk.",
+    },
+    {
+        reason: "Expansion and Contraction",
+        description: "Metal roofs can expand and contract with temperature changes, which may cause issues with fasteners and seams over time. Proper installation and quality materials can minimize these concerns.",
+    }
+]
 ---
 
-<Layout title="404 Not Found">
+<Layout title="Metal Roof System">
   <Container>
     <div class="min-h-[calc(100vh-16rem)] flex items-center justify-center">
-      <div class="mt-16 text-center">
-        <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">metal</h1>
-        <p class="text-lg mt-4 text-slate-600">info about metal</p>
-      </div>
+        <div class="mt-16 text-center">
+            <!-- left and right division for heading and image -->
+            <div class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-8">
+                <div class="py-6 md:order-1 hidden md:block">
+                    <Picture
+                    src={metalImage}
+                    alt="Home with metal roof"
+                    widths={[200, 400, 600]}
+                    sizes="(max-width: 800px) 100vw, 620px"
+                    loading="eager"
+                    format="avif"
+                    />
+                </div>
+
+                <div>
+            <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">Metal Roofing System</h1>
+            <p class="text-lg mt-4 text-slate-600 max-w-xl">When it comes to protecting your home and enhancing its value, a metal roof system is a smart choice. Here’s why:</p>
+                </div>
+
+                
+            </div>
+
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+            {
+                reasons.map((item) => (
+                    <div class="flex gap-4 items-start">
+                    <div>
+                        <h3 class="font-semibold text-lg">{item.reason}</h3>{" "}
+                        <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+                    </div>
+                    </div>
+                ))
+            }
+            </div>
+
+            <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-16">
+                Metal Roofing Cons</h2>
+            <p class="text-lg mt-4 text-slate-600">While metal roofs offer numerous benefits, there are some drawbacks to consider:</p>
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-8 gap-16">
+            {
+                cons.map((item) => (
+                    <div class="flex gap-4 items-start">
+                    <div>
+                        <h3 class="font-semibold text-lg">{item.reason}</h3>{" "}
+                        <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+                    </div>
+                    </div>
+                ))
+            }
+            </div> 
+        </div>
     </div>
   </Container>
+  <Cta />
+  <Container>
+    <div class="min-h-[calc(100vh-16rem)] flex items-center justify-center">
+        <Picture
+                    src={metalImage2}
+                    alt="rain hitting metal roof"
+                    widths={[200, 400, 600]}
+                    sizes="(max-width: 800px) 100vw, 620px"
+                    loading="eager"
+                    format="avif"
+                    class = "mt-16"
+                    />
+    </div>
+    </Container>
+
+  
 </Layout>
