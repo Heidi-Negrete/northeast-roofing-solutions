@@ -4,8 +4,8 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 
-// https://astro.build/config TO DO SETUP W DEPLOYMENT
+// https://astro.build/config
 export default defineConfig({
-  site: "https://heidi-negrete.github.io",
+  site: "https://northeastroofingsolutions.com",
   integrations: [tailwind(), mdx(), sitemap(), icon()],
 });
